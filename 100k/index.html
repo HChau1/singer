@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Lưu Hà Anh</title>
 </head>
-<body>
+<body onresize="changeHeight()">
     <i onclick="topFunction()" id="page_up" title="Go to top" class="fa-solid fa-arrow-up"></i>
     <div class="navigator d-sm-flex justify-content-lg-center justify-content-sm-between position-fixed top-0">
         <nav class="navbar navbar-expand-lg">
@@ -28,11 +28,11 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav">
-                        <a href="#Section-1" class="nav-item colorNameNav nav-link active">Profile</a>
-                        <a href="#Section-2" class="nav-item colorNameNav nav-link">Award</a>
-                        <a href="#Section-3" class="nav-item colorNameNav nav-link">Performance</a>
-                        <a href="#Section-4" class="nav-item colorNameNav nav-link">Musical Instrument</a>
-                        <a href="#Section-5" class="nav-item colorNameNav nav-link">Contact</a>
+                        <a onclick="scroll_1()" class="nav-item colorNameNav nav-link active">Profile</a>
+                        <a onclick="scroll_2()" class="nav-item colorNameNav nav-link">Award</a>
+                        <a onclick="scroll_3()" class="nav-item colorNameNav nav-link">Performance</a>
+                        <a onclick="scroll_4()" class="nav-item colorNameNav nav-link">Musical Instrument</a>
+                        <a onclick="scroll_5()" class="nav-item colorNameNav nav-link">Contact</a>
                     </div>
                 </div>
             </div>
