@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.carousel_container{
+    width:100%;
+    position: relative;
+}
+
+.carousel_container i {
+    height: calc(100vw*50/1500);
+    width: calc(100vw*50/1500);
+    background-color: #fff;
+    text-align: center;
+    line-height: calc(100vw*50/1500);
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 46%;
+    font-size: 1.25rem;
+    transform: translateY(-50%);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+    z-index: 1;
+}
+
+.carousel_container i:first-child {
+    left: 0.5rem;
+}
+.carousel_container i:last-child {
+    right: 0.5rem;
+}
+
+.carousel_container .carousel_slider{
+    display: grid;
+    grid-auto-flow: column;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: 0;
+    grid-auto-columns: calc((100% / 5) - 9px);
+    /* gap: calc(100vw*10/1533); */
+}
+
+.carousel_slider::-webkit-scrollbar{
+    display: none;
+}
+
+.carousel_slider :where(.card, .img){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel_slider.dragging{
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+
+.carousel_slider.dragging .card{
+    cursor: grab;
+    user-select: none;
+}
+
+.carousel_slider .card{
+    scroll-snap-align: start;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: none;
+    width: calc(100vw*240/1533);
+}
+
+.card .img{
+    width: calc(100vw*256/1533);
+    height: calc(100vw*336/1533);
+}
+
+.card .img img{
+    width: calc(100vw*256/1533);
+    height: calc(100vw*336/1533);
+    object-fit: cover;
+}
+/* calc((100% / ((100% - (2 * calc(100%*143/1533)))/ calc(100%*256/1533)))); */
+@media screen and (max-width: 900px) {
+    .carousel_container .carousel_slider {
+        grid-auto-columns: calc((100% / 4) - 6px);
+    }
+}
+@media screen and (max-width: 600px) {
+    .carousel_container .carousel_slider {
+        grid-auto-columns: calc((100% / 4) - 6px);
+    }
+    .carousel_container i{
+        width: calc(100vw*100/1533);
+        height: calc(100vw*100/1533);
+        line-height: calc(100vw*100/1533);
+    }
+}
+@media screen and (max-width: 300px) {
+    .carousel_container .carousel_slider {
+        grid-auto-columns: calc((100% / 4) - 6px);
+    }
+}
