@@ -23,6 +23,14 @@ body::-webkit-scrollbar {
     align-items: flex-start;
 } */
 
+.navigator{
+    background-color: #db8522;
+    width: 100vw;
+    /* height: calc(100vw*29/1533); */
+    padding-top: calc(100vw*24  /1533);
+    z-index: 3;
+}
+
 .navbar{
     padding: 0;
 }
@@ -63,7 +71,7 @@ body::-webkit-scrollbar {
 .info{
     background-image: linear-gradient(to bottom, #F3A248 30%, #8C4002);
     height: auto;
-    padding: 0 0 3.1vw 3.65vw;
+    padding: calc(100vw*139/1533) 0 3.1vw 3.65vw;
 }
 
 .left-deco{

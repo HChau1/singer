@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
+    scroll-padding: var(--scroll-padding, calc(100vw*120/1535));
 }
 
 .wrapper_container{
@@ -9,6 +11,7 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    height: calc(100vw*145/525);
 }
 
 .carousel_container{
@@ -44,7 +47,6 @@
     grid-auto-flow: column;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
     scrollbar-width: 0;
     grid-auto-columns: calc((100% / 5) - 9px);
     /* gap: calc(100vw*10/1533); */
