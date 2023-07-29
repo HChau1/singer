@@ -19,26 +19,26 @@
     <title>Lưu Hà Anh</title>
 </head>
 <body>
-    <div class="info ">
-        <div class="d-sm-flex justify-content-md-center justify-content-sm-between">
-            <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid position-md-relative position-sm-absolute">
-                    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" style="border: 1px solid black;">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                        <div class="navbar-nav">
-                            <a href="#" class="nav-item colorNameNav nav-link active">Profile</a>
-                            <a href="#award" class="nav-item colorNameNav nav-link">Award</a>
-                            <a href="#performance" class="nav-item colorNameNav nav-link">Performance</a>
-                            <a href="#instrument" class="nav-item colorNameNav nav-link">Musical Instrument</a>
-                            <a href="#contact" class="nav-item colorNameNav nav-link">Contact</a>
-                        </div>
+    <div class="navigator d-sm-flex justify-content-lg-center justify-content-sm-between position-fixed top-0">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid position-md-relative position-sm-absolute">
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" style="border: 1px solid black;">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav">
+                        <a href="#Section-1" class="nav-item colorNameNav nav-link active">Profile</a>
+                        <a href="#Section-2" class="nav-item colorNameNav nav-link">Award</a>
+                        <a href="#Section-3" class="nav-item colorNameNav nav-link">Performance</a>
+                        <a href="#Section-4" class="nav-item colorNameNav nav-link">Musical Instrument</a>
+                        <a href="#Section-5" class="nav-item colorNameNav nav-link">Contact</a>
                     </div>
                 </div>
-            </nav>
-        </div>
-        <div class="profile-container position-absolute col-md-6 col-sm-12 border border-dark">
+            </div>
+        </nav>
+    </div>
+    <div class="info ">
+        <section class="profile-container position-absolute col-md-6 col-sm-12 border border-dark" id="Section-1">
             <div class="profile">
                 <div class="title fw-bold">
                     <div class="colorName ">Lưu Hà Anh</div>
@@ -67,14 +67,14 @@
                     </p>
                 </div>
             </div>
-        </div>
+        </section>
         <div class="img-container position-relative">
             <img src="./img/Avatar.png" alt="">
             <img src="./img/Group 29 (1).png" alt="" class="position-absolute">
         </div>
     </div>
     <img src="./img/Group 15.png" alt="" class="left-deco">
-    <div class="award-container" id="award">
+    <section class="award-container" id="Section-2">
         <h1 class="award fw-bold text-uppercase text-center">awards</h1>
         <div class="award-container d-flex justify-content-center">
             <img src="./img/award1.png" alt="">
@@ -92,7 +92,7 @@
                 <li><img src="./img/Gold-cup.png" alt="Golden cup">Top vé vàng Vietnam Idol (2013)</li>
             </ul>
         </div>
-    </div>
+    </section>
     <div class="media-container">
         <h1 class="media text-uppercase text-center">the media</h1>
         <div class="career d-flex justify-content-between">
@@ -123,7 +123,7 @@
             <img src="./img/project.png" alt="">
         </div>
     </div>
-    <div class="performance-container info" id="performance">
+    <section class="performance-container info" id="Section-3">
         <h1 class="media text-uppercase text-center">performance</h1>
         <div class="wrapper">
           <div class="wrapper_container">
@@ -217,8 +217,8 @@
             </div>
           </div>
         </div>
-    </div>
-    <div class="music-container min-vh-100 vh-100" id="instrument">
+    </section>
+    <section class="music-container min-vh-100 vh-100" id="Section-4">
         <div class="award fw-bold text-uppercase text-center">musical instruments</div>
         <h4 class="text-capitalize text-center">Các loại nhạc cụ có thể chơi : Guitar - Piano - Bass - Trống Jazz </h4>
         <br>
@@ -288,7 +288,7 @@
                 <img src="./img/e-2-6.png" alt="">
             </div>
         </div>
-        <div class="contact" id="contact">
+        <section class="contact" id="Section-5">
             <div class="contact-container">
                 <div class="text-uppercase text-center text-light">find me on</div>
                 <div class="social-media d-flex justify-content-center">
@@ -299,7 +299,7 @@
                     <img src="./Huge-icon/social/solid/gmail.png" alt="">
                 </div>
             </div>
-        </div>
+        </section>
     </div>
     <script src="./script_carousel.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>

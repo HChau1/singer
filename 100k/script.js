@@ -55,5 +55,11 @@ const multipleItemCarousel = document.querySelector('#carouselExample')
 // }else{
 //     $(multipleItemCarousel).addClass('slide')
 // }
+const navigation = document.querySelector(".navigator");
 
+const navigationHeight = navigation.offsetHeight;
 
+document.documentElement.style.setProperty(
+  "--scroll-padding",
+  navigationHeight + "px"
+);
