@@ -1,59 +1,52 @@
-$('.multiple .carousel').each(function(){
-    var currentCarouselId = '#' + $(this).attr('id');
-    const multipleItemCarousel = document.querySelector(currentCarouselId);
+const navigation = document.querySelector(".navigator");
 
-    // if(window.matchMedia("(min-width:576px)").matches){
-        const carousel = new bootstrap.Carousel(multipleItemCarousel, {
-            interval: false,
-            wrap: false
-        })
-        var carouselWidth = $(currentCarouselId + ' .carousel-inner')[0].scrollWidth;
-        var cardWidth = $(currentCarouselId + ' .carousel-item').width();
-        var scrollPosition = 0;    
-        $(currentCarouselId + '.carousel-control-next').on('click', function(){
-                scrollPosition = scrollPosition + cardWidth;
-                $(currentCarouselId + '.carousel-inner').animate({scrollLeft: scrollPosition},300);
-            
-        });
-        $(currentCarouselId + '.carousel-control-prev').on('click', function(){
-                scrollPosition = scrollPosition - cardWidth;
-                $(currentCarouselId + '.carousel-inner').animate({scrollLeft: scrollPosition},300);
-            
-        });
-    // }else{
-    //     $(multipleItemCarousel).addClass('slide');
-    // }
-});
+const navigationHeight = navigation.offsetHeight;
 
-const multipleItemCarousel = document.querySelector('#carouselExample')
+document.documentElement.style.setProperty(
+  "--scroll-padding",
+  navigationHeight + "px"
+);
 
-// if (window.matchMedia("(min-width:576px").matches) {
-    // const carousel = new bootstrap.Carousel(myCarouselElement, {
-    //     interval: false
-    // })
+let mybutton = document.querySelector('#page_up');
 
-    var carouselWidth = $('.carousel-inner')[0].scrollWidth;
-    var cardWidth = $('.carousel-item').width()
+window.addEventListener("scroll", () =>{
+    if (window.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+})
+const body = document.querySelector('body')
+let winHeight = Math.round(body.offsetWidth)
+function changeHeight() {
+    let winHeight2 = Math.round(body.offsetWidth)
+    if(winHeight2 != winHeight){
+        winHeight = winHeight2; 
+     }
+}
+function scroll_1() {
+    console.log(winHeight)
+    document.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+function scroll_2() {
+    document.scrollTop = winHeight*950/1480;
+    document.documentElement.scrollTop = winHeight*920/1480;
+}
+function scroll_3() {
+    document.scrollTop = winHeight*3870/1480;
+    document.documentElement.scrollTop = winHeight*5200/1480;
+}
+function scroll_4() {
+    document.scrollTop = winHeight*6500/1480;
+    document.documentElement.scrollTop = winHeight*6400/1480;
+}
+function scroll_5() {
+    document.scrollTop = winHeight*948/1480;
+    document.documentElement.scrollTop = winHeight*10;
+}
 
-    var scrollPosition = 0
-
-    $('.carousel-control-next').on('click', ()=>{
-        // if(scrollPosition < (carouselWidth - (cardWidth *5))){
-            scrollPosition = scrollPosition + cardWidth
-            $('.carousel-inner').animate({scrollLeft: scrollPosition},
-            400)
-        // } 
-    })
-    $('.carousel-control-prev').on('click', ()=>{
-        // if(scrollPosition > 0){
-            console.log('prev')
-            scrollPosition = scrollPosition - cardWidth
-            $('.carousel-inner').animate({scrollLeft: scrollPosition},
-            400)
-        // }
-    })
-// }else{
-//     $(multipleItemCarousel).addClass('slide')
-// }
-
-
+function topFunction() {
+  document.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
