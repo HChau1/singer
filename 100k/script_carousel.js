@@ -16,7 +16,7 @@ const arrowBtns_3 = document.querySelectorAll(".carousel_container_3 i")
 const firstCardWidth_3 = carousel_3.querySelector(".card_3").offsetWidth
 const carouselChildrens_3 = [...carousel_3.children]
 
-let isDrag = false, startX, startScrollLeft_1, startScrollLeft_2, startScrollLeft_3, timeoutId
+let isDrag = false, startX, startScrollLeft_1, startScrollLeft_2, startScrollLeft_3, timeoutId_1, timeoutId_2, timeoutId_3
 
 // get num of img that can fit in the carousel at once
 let cardPreview_1 = Math.round(carousel_1.offsetWidth / firstCardWidth_1)
@@ -128,7 +128,7 @@ const infiniteScroll_1 = () => {
         carousel_1.scrollLeft = carousel_1.offsetWidth
     }
 
-    clearTimeout(timeoutId)
+    clearTimeout(timeoutId_1)
     if(!wrapper_1.matches(":hover")) autoPlay_1(); 
 }
 const infiniteScroll_2 = () => {
@@ -138,7 +138,7 @@ const infiniteScroll_2 = () => {
         carousel_2.scrollLeft = carousel_2.offsetWidth
     }
 
-    clearTimeout(timeoutId)
+    clearTimeout(timeoutId_2)
     if(!wrapper_2.matches(":hover")) autoPlay_2(); 
 }
 const infiniteScroll_3 = () => {
@@ -148,18 +148,18 @@ const infiniteScroll_3 = () => {
         carousel_3.scrollLeft = carousel_3.offsetWidth
     }
 
-    clearTimeout(timeoutId)
+    clearTimeout(timeoutId_3)
     if(!wrapper_3.matches(":hover")) autoPlay_3(); 
 }
 
 const autoPlay_1 = () => {
-    timeoutId = setTimeout(() => carousel_1.scrollLeft += firstCardWidth_1, 1000)
+    timeoutId_1 = setTimeout(() => carousel_1.scrollLeft += firstCardWidth_1, 1000)
 }
 const autoPlay_2 = () => {
-    timeoutId = setTimeout(() => carousel_2.scrollLeft += firstCardWidth_2, 1000)
+    timeoutId_2 = setTimeout(() => carousel_2.scrollLeft += firstCardWidth_2, 1000)
 }
 const autoPlay_3 = () => {
-    timeoutId = setTimeout(() => carousel_3.scrollLeft += firstCardWidth_3, 1000)
+    timeoutId_3 = setTimeout(() => carousel_3.scrollLeft += firstCardWidth_3, 1000)
 }
 
 autoPlay_1()
@@ -167,22 +167,25 @@ autoPlay_2()
 autoPlay_3()
 
 carousel_1.addEventListener("mousedown", dragStart_1);
-carousel_1.addEventListener("mousemove", dragging_1);
-document.addEventListener("mouseup", dragEnd_1);
-carousel_1.addEventListener("scroll", infiniteScroll_1)
-wrapper_1.addEventListener("mouseenter", () => clearTimeout(timeoutId));
-wrapper_1.addEventListener("mouseleave", autoPlay_1);
-
 carousel_2.addEventListener("mousedown", dragStart_2);
-carousel_2.addEventListener("mousemove", dragging_2);
-document.addEventListener("mouseup", dragEnd_2);
-carousel_2.addEventListener("scroll", infiniteScroll_2)
-wrapper_2.addEventListener("mouseenter", () => clearTimeout(timeoutId));
-wrapper_2.addEventListener("mouseleave", autoPlay_2);
-
 carousel_3.addEventListener("mousedown", dragStart_3);
+
+carousel_1.addEventListener("mousemove", dragging_1);
+carousel_2.addEventListener("mousemove", dragging_2);
 carousel_3.addEventListener("mousemove", dragging_3);
+
+document.addEventListener("mouseup", dragEnd_1);
+document.addEventListener("mouseup", dragEnd_2);
 document.addEventListener("mouseup", dragEnd_3);
+
+carousel_1.addEventListener("scroll", infiniteScroll_1)
+carousel_2.addEventListener("scroll", infiniteScroll_2)
 carousel_3.addEventListener("scroll", infiniteScroll_3)
-wrapper_3.addEventListener("mouseenter", () => clearTimeout(timeoutId));
+
+wrapper_1.addEventListener("mouseenter", () => clearTimeout(timeoutId_1));
+wrapper_2.addEventListener("mouseenter", () => clearTimeout(timeoutId_2));
+wrapper_3.addEventListener("mouseenter", () => clearTimeout(timeoutId_3));
+
+wrapper_1.addEventListener("mouseleave", autoPlay_1);
+wrapper_2.addEventListener("mouseleave", autoPlay_2);
 wrapper_3.addEventListener("mouseleave", autoPlay_3); 
